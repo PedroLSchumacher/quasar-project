@@ -1,18 +1,11 @@
+import PokemonIndex from 'pages/PokemonIndex.vue';
+import PokemonDetail from 'pages/PokemonDetail.vue';
+import AddPokemon from 'pages/AddPokemon.vue';
+
 const routes = [
-  {
-    path: '/',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
-    ]
-  },
+  { path: '/', component: PokemonIndex },
+  { path: '/pokemon/:id', name: 'pokemon', component: PokemonDetail },
+  { path: '/add-pokemon', component: AddPokemon }
+];
 
-  // Always leave this as last one,
-  // but you can also remove it
-  {
-    path: '/:catchAll(.*)*',
-    component: () => import('pages/ErrorNotFound.vue')
-  }
-]
-
-export default routes
+export default routes;

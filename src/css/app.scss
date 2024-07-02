@@ -1,1 +1,6 @@
-// app global css in SCSS form
+
+@import "~quasar/src/css/variables.sass";
+
+body {
+  font-family: 'Arial', sans-serif;
+}

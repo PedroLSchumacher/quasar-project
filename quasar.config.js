@@ -8,7 +8,6 @@
 // Configuration for your app
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js
 
-
 const { configure } = require('quasar/wrappers');
 const path = require('path');
 
@@ -50,27 +49,16 @@ module.exports = configure(function (/* ctx */) {
         browser: [ 'es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1' ],
         node: 'node20'
       },
-
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
-      // vueRouterBase,
-      // vueDevtools,
-      // vueOptionsAPI: false,
-
-      // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
-
-      // publicPath: '/',
-      // analyze: true,
-      // env: {},
-      // rawDefine: {}
-      // ignorePublicFolder: true,
-      // minify: false,
-      // polyfillModulePreload: true,
-      // distDir
-
-      // extendViteConf (viteConf) {},
-      // viteVuePluginOptions: {},
-
+      viteVuePluginOptions: {
+        template: {
+          transformAssetUrls: {
+            base: null,
+            includeAbsolute: false
+          }
+        }
+      },
       vitePlugins: [
+        ['@vitejs/plugin-vue', {}],
         ['@intlify/vite-plugin-vue-i18n', {
           // if you want to use Vue I18n Legacy API, you need to set `compositionOnly: false`
           // compositionOnly: false,
@@ -87,8 +75,31 @@ module.exports = configure(function (/* ctx */) {
             lintCommand: 'eslint "./**/*.{js,mjs,cjs,vue}"'
           }
         }, { server: false }]
-      ]
+      ],
+      alias: {
+        '@': path.resolve(__dirname, './src'),
+        'quasar': path.resolve(__dirname, './node_modules/quasar')
+      }
     },
+
+    vueRouterMode: 'history', // available values: 'hash', 'history'
+    // vueRouterBase,
+    // vueDevtools,
+    // vueOptionsAPI: false,
+
+    // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
+
+    // publicPath: '/',
+    // analyze: true,
+    // env: {},
+    // rawDefine: {}
+    // ignorePublicFolder: true,
+    // minify: false,
+    // polyfillModulePreload: true,
+    // distDir
+
+    // extendViteConf (viteConf) {},
+    // viteVuePluginOptions: {},
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
     devServer: {
@@ -211,7 +222,7 @@ module.exports = configure(function (/* ctx */) {
         'my-content-script'
       ],
 
-      // extendBexScriptsConf (esbuildConf) {}
+      // extendBexScriptsConf (esbuildConf) {},
       // extendBexManifestJson (json) {}
     }
   }
