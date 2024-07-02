@@ -1,11 +1,11 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import { store } from 'quasar/wrappers';
+import { createStore } from 'vuex';
 import pokemon from './pokemon';
 
-Vue.use(Vuex);
-
-export default new Vuex.Store({
-  modules: {
-    pokemon
-  }
+export default store(function () {
+  return createStore({
+    modules: {
+      pokemon
+    }
+  });
 });

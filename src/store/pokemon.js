@@ -1,4 +1,3 @@
-// src/store/pokemon.js
 import { db } from '../firebase';
 
 const state = {
