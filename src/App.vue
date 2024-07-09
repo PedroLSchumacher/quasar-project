@@ -11,5 +11,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~quasar/src/css/variables.sass';
+@import "../../node_modules/quasar/src/css/variables.sass";
 </style>
