@@ -26,7 +26,7 @@ export default {
         image: this.image,
         type: this.type
       };
-      this.$store.dispatch('pokemon/addPokemon', newPokemon).then(() => {
+      this.$store.dispatch('pokemon/  addPokemon', newPokemon).then(() => {
         this.$router.push('/');
       });
     }

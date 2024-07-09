@@ -1,6 +1,6 @@
-import PokemonIndex from 'pages/PokemonIndex.vue';
-import PokemonDetail from 'pages/PokemonDetail.vue';
-import AddPokemon from 'pages/AddPokemon.vue';
+import PokemonIndex from 'src/pages/PokemonIndex.vue';
+import PokemonDetail from 'src/pages/PokemonDetails.vue';
+import AddPokemon from 'src/pages/AddPokemon.vue';
 
 const routes = [
   { path: '/', component: PokemonIndex },

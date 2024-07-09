@@ -22,8 +22,16 @@
       bordered
     >
       <q-list>
-        <router-link to="/">Home</router-link>
-        <router-link to="/add-pokemon">Add Pokémon</router-link>
+        <router-link to="/">
+          <q-item clickable>
+            <q-item-section>Home</q-item-section>
+          </q-item>
+        </router-link>
+        <router-link to="/add-pokemon">
+          <q-item clickable>
+            <q-item-section>Add Pokémon</q-item-section>
+          </q-item>
+        </router-link>
       </q-list>
     </q-drawer>
 
@@ -42,3 +50,7 @@ function toggleLeftDrawer () {
   leftDrawerOpen.value = !leftDrawerOpen.value
 }
 </script>
+
+<style lang="scss">
+@import '~quasar/src/css/variables.sass';
+</style>

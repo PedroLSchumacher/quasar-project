@@ -1,13 +1,15 @@
 <template>
-  <router-view />
+  <div>
+    <router-view />
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
-}
+  name: 'App',
+};
 </script>
 
 <style lang="scss">
-@import '~quasar/src/css/variables.sass';
+@import "../../node_modules/quasar/src/css/variables.sass";
 </style>
